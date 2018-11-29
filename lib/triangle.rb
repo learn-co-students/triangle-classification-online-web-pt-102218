@@ -21,7 +21,7 @@ class Triangle
   end
  
   class TriangleError < StandardError
-    puts "The sum of the lengths of any two sides of a triangle always exceeds the length of the third side. This is a principle known as the triangle inequality. And, each side must be larger than 0."
+    puts "The sum of the lengths of any two sides of a triangle always exceeds the length of the third side. This is a principle known as the triangle inequality. And each side must be larger than 0."
   end
 end
 
