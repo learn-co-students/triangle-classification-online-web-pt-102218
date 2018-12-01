@@ -12,10 +12,9 @@ class Triangle
   end
   
   def kind
-  if @side1 <= 0 || @side2 <= 0 || @side3 <= 0
+  if (@side1 <= 0 || @side2 <= 0 || @side3 <= 0) || ( @side1 + @side2 <= @side3 || @side2 + @side3 <= @side1 || @side1 + @side3 <= @side2)
     raise TriangleError
-    elsif kind2
-  end
+    end
     if @side1 != @side2 && @side2 != @side3 && @side3 != @side1
       :scalene
       elsif @side1 == @side2 && @side2 == @side3 && @side1 == @side3
@@ -25,14 +24,7 @@ class Triangle
   end
   end
   
-  def kind2
-    if @side1 + @side2 > @side3 || @side2 + @side3 > @side1 || @side1 + @side3 > @side2
-    begin
-    raise TriangleError
-    rescue TriangleError => error
-    puts error.message
-    Triangle.new
-  end
+
   
   
   class TriangleError < StandardError
