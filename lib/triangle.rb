@@ -1,30 +1,26 @@
-require "pry"
-
 class Triangle
   
+  attr_accessor :equilateral, :isosceles, :scalene, :s1, :s2, :s3
   
-  attr_accessor :equilateral, :isosceles, :scalene, :side1, :side2, :side3
-  
-  def initialize(side1, side2, side3)
-    @side1 =side1
-    @side2 = side2
-    @side3 = side3
+  def initialize(s1, s2, s3)
+    @s1 = s1
+    @s2 = s2
+    @s3 = s3
   end
   
   def kind
-  if (@side1 <= 0 || @side2 <= 0 || @side3 <= 0) || ( @side1 + @side2 <= @side3 || @side2 + @side3 <= @side1 || @side1 + @side3 <= @side2)
-    raise TriangleError
-    end
-    if @side1 != @side2 && @side2 != @side3 && @side3 != @side1
+    if (s1 <= 0 || s2 <= 0 || s3 <=0) || (s1 + s2 <= s3 || s2 + s3 <= s1 || s1 + s3 <= s2)
+      raise TriangleError
+  end
+    if s1 != s2 && s2 != s3 && s1 != s3
       :scalene
-      elsif @side1 == @side2 && @side2 == @side3 && @side1 == @side3
+      elsif s1 == s2 && s2 == s3 && s1 == s3
       :equilateral
     else 
       :isosceles
-  end
+    end
   end
   
-
   
   
   class TriangleError < StandardError
