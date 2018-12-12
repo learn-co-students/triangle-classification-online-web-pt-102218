@@ -22,7 +22,7 @@ class Triangle
         :scalene
       end
     end
-    end
+  end
 
   class TriangleError < StandardError
     puts "NOT A TRIANGLE"
