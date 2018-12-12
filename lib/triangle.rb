@@ -25,7 +25,7 @@ class Triangle
     end
 
   class TriangleError < StandardError
-
+    puts "NOT A TRIANGLE"
   end
 
 
